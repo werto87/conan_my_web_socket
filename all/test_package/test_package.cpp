@@ -1,6 +1,7 @@
+#include <iostream>
 #include <my_web_socket/mockServer.hxx>
-
 int main() {
+  std::cout << "huhu" << std::endl;
   auto mockServerOption = my_web_socket::MockServerOption{};
   auto ioContext = boost::asio::io_context{};
   auto success = bool{};
