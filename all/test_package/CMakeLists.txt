@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 project(test_package CXX)
 
-find_package(confu_soci REQUIRED CONFIG)
+find_package(my_web_socket REQUIRED CONFIG)
 
 add_executable(${PROJECT_NAME} test_package.cpp)
-target_link_libraries(${PROJECT_NAME} PRIVATE confu_soci::confu_soci)
+target_link_libraries(${PROJECT_NAME} PRIVATE my_web_socket::my_web_socket)
