@@ -43,12 +43,9 @@ class MyWebSocket(ConanFile):
         if self.settings.os == "Windows":
             del self.options.fPIC
 
-    def configure(self):
-        self.options["boost"].header_only = True
-
     def requirements(self):
         self.requires("boost/1.85.0",force=True)
-        self.requires("certify/cci.20201114")
+        self.requires("certify/cci.20201114@modern-durak")
         self.requires("fmt/11.0.2")
 
     def source(self):
@@ -67,4 +64,5 @@ class MyWebSocket(ConanFile):
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.libs = [self.name]
+        self.cpp_info.components[self.name].requires = ["boost::headers","certify::_certify","fmt::fmt"]
+        self.cpp_info.components[self.name].libs = [self.name]
