@@ -31,9 +31,11 @@ class MyWebSocket(ConanFile):
     def generate(self):
         tc = CMakeToolchain(self)
         tc.user_presets_path = False #workaround because this leads to useless options in cmake-tools configure
-        flags= " ".join(self.conf.get("tools.build:cxxflags"))
-        self.output.info(f'Using CXXFLAGS: "{flags}"')
-        tc.variables["CMAKE_CXX_FLAGS"] = flags
+        unformatted_flags=self.conf.get("tools.build:cxxflags")
+        if unformatted_flags:
+            flags= " ".join(unformatted_flags)
+            self.output.info(f'Using CXXFLAGS: "{flags}"')
+            tc.variables["CMAKE_CXX_FLAGS"] = flags
         tc.variables["LOG_CO_SPAWN_PRINT_EXCEPTIONS"] = self.options.log_co_spawn_print_exception
         tc.variables["LOG_WRITE"] = self.options.log_write
         tc.variables["LOG_READ"] = self.options.log_read
@@ -47,9 +49,9 @@ class MyWebSocket(ConanFile):
             del self.options.fPIC
 
     def requirements(self):
-        self.requires("boost/1.85.0",force=True)
-        self.requires("certify/cci.20201114")
-        self.requires("fmt/11.0.2")
+        self.requires("boost/1.86.0")
+        self.requires("certify/cci.20201114@modern-durak")
+        self.requires("fmt/11.2.0")
 
     def source(self):
         get(self, **self.conan_data["sources"][self.version], strip_root=True)
