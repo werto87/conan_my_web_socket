@@ -8,13 +8,7 @@ required_conan_version = ">=1.51.1"
 class MyWebSocket(ConanFile):
     name = "my_web_socket"
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
     generators = "CMakeDeps"
-
-
-
-
     options = {
         "log_co_spawn_print_exception": [True, False],
         "log_write": [True, False],
