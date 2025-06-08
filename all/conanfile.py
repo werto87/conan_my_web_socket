@@ -19,7 +19,7 @@ class MyWebSocket(ConanFile):
         "log_co_spawn_print_exception": [True, False],
         "log_write": [True, False],
         "log_read": [True, False],
-        "log_boost_asio": [True, False]
+        "log_boost_asio": [True, False],
     }
     default_options = {
         "log_co_spawn_print_exception": False,
@@ -41,12 +41,6 @@ class MyWebSocket(ConanFile):
         tc.variables["LOG_READ"] = self.options.log_read
         tc.variables["LOG_BOOST_ASIO"] = self.options.log_boost_asio
         tc.generate()
-
-
-
-    def config_options(self):
-        if self.settings.os == "Windows":
-            del self.options.fPIC
 
     def requirements(self):
         self.requires("boost/1.86.0")
