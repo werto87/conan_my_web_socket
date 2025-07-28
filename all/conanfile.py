@@ -37,8 +37,8 @@ class MyWebSocket(ConanFile):
         tc.generate()
 
     def requirements(self):
-        self.requires("boost/1.86.0")
-        self.requires("certify/cci.20201114@modern-durak")
+        self.requires("boost/1.87.0")
+        self.requires("openssl/3.5.1")
         self.requires("fmt/11.2.0")
 
     def source(self):
@@ -58,5 +58,5 @@ class MyWebSocket(ConanFile):
         cmake.install()
 
     def package_info(self):
-        self.cpp_info.components[self.name].requires = ["boost::headers","certify::_certify","fmt::fmt"]
+        self.cpp_info.components[self.name].requires = ["boost::headers","openssl::openssl","fmt::fmt"]
         self.cpp_info.components[self.name].libs = [self.name]

@@ -1,7 +1,4 @@
 sources:
-  0.1.2:
-    url: https://github.com/werto87/my_web_socket/archive/refs/tags/v0.1.2.tar.gz
-    sha256: 79b919e266248d08ea8163618a9ff21d595325d8bebb12de52f76e92e424fdb6
-  0.1.1:
-    url: https://github.com/werto87/my_web_socket/archive/refs/tags/v0.1.1.tar.gz
-    sha256: a95818087f36f80e1ab53174d2ddbfb10cb4b5392021d3d0195d377b79e54f4e
+  1.0.0:
+    url: https://github.com/werto87/my_web_socket/archive/refs/tags/v1.0.0.tar.gz
+    sha256: 39f7afe13092a45aaa7b58737dec61a310cd03d50a822fa7d010b9db42e281aa
