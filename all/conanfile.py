@@ -37,8 +37,8 @@ class MyWebSocket(ConanFile):
         tc.generate()
 
     def requirements(self):
-        self.requires("boost/1.87.0")
-        self.requires("openssl/3.5.1")
+        self.requires("boost/1.90.0")
+        self.requires("openssl/3.6.0")
         self.requires("fmt/11.2.0")
 
     def source(self):
